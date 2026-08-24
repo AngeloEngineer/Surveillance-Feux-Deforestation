@@ -40,13 +40,9 @@ _[À compléter : types de sources, vélocité, origine]_
 | Docker | Partagé avec d'autres systèmes | Conflits de ports à gérer |
 | Java | OpenJDK 17.0.19 | Compatibilité Hadoop/Spark à valider |
 
-## Décisions techniques
+## Décisions techniques et blocages
 
-_[À compléter au fil du projet — voir docs/decisions.md]_
-
-## Blocages rencontrés
-
-_[À compléter au fil du projet — voir docs/blocages.md]_
+_[À compléter au fil du projet — voir docs/documentation.md]_
 
 ## Structure du dépôt
 
@@ -54,10 +50,7 @@ _[À compléter au fil du projet — voir docs/blocages.md]_
 surveillance-feux-deforestation/
 ├── README.md
 ├── docs/
-│   ├── architecture.md
-│   ├── decisions.md
-│   ├── blocages.md
-│   └── donnees.md
+│   └── documentation.md
 ├── ingestion/
 ├── storage/
 ├── processing/

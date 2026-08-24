@@ -9,7 +9,6 @@ venv/
 
 # Secrets et configuration locale — ne jamais versionner
 .env
-.env.*
 *.key
 secrets/
 
