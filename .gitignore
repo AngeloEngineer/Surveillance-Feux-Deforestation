@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Secrets et configuration locale — ne jamais versionner
+.env
+.env.*
+*.key
+secrets/
+
+# Données téléchargées localement (volumineuses, non versionnées)
+data/raw/
+data/interim/
+*.tif
+*.tiff
+*.parquet
+*.nc
+
+# Docker (volumes montés localement si on en utilise)
+docker/volumes/
+
+# OS / éditeur
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
