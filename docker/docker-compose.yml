@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: surveillance_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: surveillance
+      POSTGRES_USER: surveillance
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    mem_limit: 512m
+
+volumes:
+  postgres_data:
