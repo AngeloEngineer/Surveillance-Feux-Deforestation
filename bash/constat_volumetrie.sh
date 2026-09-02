@@ -1,0 +1,2 @@
+docker exec -it surveillance_postgres psql -U surveillance -d surveillance -c "SELECT COUNT(*) FROM fire_detections;"
+docker exec -it surveillance_postgres psql -U surveillance -d surveillance -c "SELECT pg_size_pretty(pg_total_relation_size('fire_detections'));"
