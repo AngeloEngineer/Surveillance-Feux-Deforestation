@@ -14,20 +14,18 @@ _[À compléter : description du problème concret — feux de brousse en Afriqu
 
 _[À compléter : schéma de l'architecture globale, une fois les choix validés]_
 
-| Composant | Rôle | Technologies |
-|-----------|------|--------------|
-| Ingestion | _[à définir]_ | _[à définir]_ |
-| Stockage | _[à définir]_ | _[à définir]_ |
-| Traitement | _[à définir]_ | _[à définir]_ |
-| Analytics | _[à définir]_ | _[à définir]_ |
+| Composant | Rôle | Technologies | État |
+|-----------|------|--------------|------|
+| Ingestion | Récupérer les détections de feux depuis FIRMS | Python, requests, psycopg2 | Fonctionnel — testé, idempotence validée |
+| Stockage | Stocker les données géospatiales | PostgreSQL 16.4, PostGIS 3.4 | Déployé, fonctionnel |
+| Traitement | _[à définir]_ | _[à définir]_ | _[à définir]_ |
+| Analytics | _[à définir]_ | _[à définir]_ | _[à définir]_ |
 
 ## Sources de données
 
-_[À compléter : types de sources, vélocité, origine]_
-
-| Source | Type | Fréquence |
-|--------|------|-----------|
-| _[à définir]_ | _[à définir]_ | _[à définir]_ |
+| Source | Type | Fréquence | État |
+|--------|------|-----------|------|
+| NASA FIRMS (VIIRS_SNPP_NRT) | API REST, CSV | Quasi continue (5 jours glissants) | Testée, fonctionnelle |
 
 ## Contraintes d'environnement
 
@@ -48,19 +46,22 @@ _[À compléter au fil du projet — voir docs/documentation.md]_
 
 ```
 surveillance-feux-deforestation/
+├── .gitignore
+├── .env.example
 ├── README.md
+├── requirements.txt
+├── docker/
+│   └── docker-compose.yml
 ├── docs/
 │   └── documentation.md
 ├── ingestion/
-├── storage/
-├── processing/
-├── analytics/
-├── pipelines/
-├── monitoring/
-├── tests/
+│   └── pull_firms_to_postgres.py
+├── logs/
 ├── scripts/
-├── notebooks/
-└── docker/
+│   └── test_firms_connection.py
+└── storage/
+    └── sql/
+        └── 001_create_fire_detections.sql
 ```
 
 ## Démarrage
